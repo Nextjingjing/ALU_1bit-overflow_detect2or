@@ -8,9 +8,9 @@ entity overflow_detector is
         sum     : in  STD_LOGIC;
         overflow : out STD_LOGIC
     );
-end Overflow_detector;
+end overflow_detector;
 
-architecture Behavioral of Overflow_detector is
+architecture Behavioral of overflow_detector is
 begin
     process(a, b, sum)
     begin
