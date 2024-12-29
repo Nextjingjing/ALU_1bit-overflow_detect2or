@@ -10,7 +10,8 @@ entity alu_32bit is
         op       : in  STD_LOGIC_VECTOR(3 downto 0);
         result   : out STD_LOGIC_VECTOR(31 downto 0);
         overflow : out STD_LOGIC;
-        zero     : out STD_LOGIC
+        zero     : out STD_LOGIC;
+        carryout : out STD_LOGIC -- เพิ่ม carryout
     );
 end alu_32bit;
 
@@ -120,4 +121,7 @@ begin
 
     -- กำหนดค่า output result จาก internal_result
     result <= internal_result;
+
+    -- กำหนดค่า output carryout จาก carry ของ ALU1bit ตัวสุดท้าย
+    carryout <= carry(32);
 end Behavioral;
